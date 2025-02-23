@@ -1,0 +1,13 @@
+.grid_container {
+    width: 401px;
+    height: 401px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid_container > div {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+}
