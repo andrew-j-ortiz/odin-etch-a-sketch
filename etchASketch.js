@@ -1,6 +1,7 @@
 // DOM elements
 const domGridContainer = document.getElementById("gridContainer");
 const domLayoutButton = document.getElementById("layoutButton");
+const domClearButton = document.getElementById("clearButton");
 
 domLayoutButton.addEventListener("click", ()=>{
     const intNewGridSize = Number(prompt("Enter new grid size (cannot be more than 100): "))
