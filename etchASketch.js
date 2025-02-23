@@ -1,5 +1,15 @@
 // DOM elements
 const domGridContainer = document.getElementById("gridContainer");
+const domLayoutButton = document.getElementById("layoutButton");
+
+domLayoutButton.addEventListener("click", ()=>{
+    const intNewGridSize = Number(prompt("Enter new grid size (cannot be more than 100): "))
+    if (intNewGridSize > 100) {
+        alert("That number exceeds 100. Please enter a number between 1 and 100.")
+    } else {
+        changeGrid(intNewGridSize);
+    }
+})
 
 // generate grids inside the grid container
 function generateGrids(intGrids) {
@@ -13,4 +23,19 @@ function generateGrids(intGrids) {
     }
 }
 
-generateGrids(256)
+generateGrids(256);
+
+// change the size of the grid layout
+function changeGrid(intGrids) {
+    const intGridMeasure = intGrids * intGrids;
+    const intGridSize = 608 / intGrids;
+
+    document.getElementById("gridContainer").innerHTML = "";
+
+    generateGrids(intGridMeasure)
+
+    for (let index = 0; index < intGridMeasure; index++) {
+        document.getElementById("grid_" + index).style.width = intGridSize + "px"
+        document.getElementById("grid_" + index).style.height = intGridSize + "px"
+    }
+}
